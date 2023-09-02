@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>ReportProject</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+    <TargetServerURL>https://localhost/reportserver</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>ReportProject</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <FullPath>Release</FullPath>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>ReportProject</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+    <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="Infos.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="AcumuladosPrestaciones.rdl" />
+    <Report Include="AcumuladosTerceroAño.rdl" />
+    <Report Include="AcumuladosTerceroPeriodo.rdl" />
+    <Report Include="AcumuladoXproveedor.rdl" />
+    <Report Include="AnalisisBascula.rdl" />
+    <Report Include="AnalisisExtractoraF.rdl" />
+    <Report Include="AnalisisF.rdl" />
+    <Report Include="AnalisisFecha.rdl" />
+    <Report Include="AnalisisPonderado.rdl" />
+    <Report Include="AnalisisVolumetricos.rdl" />
+    <Report Include="Ausentismos.rdl" />
+    <Report Include="BalanceDiarioxTipo.rdl" />
+    <Report Include="BalancePerdidasGeneralFecha.rdl" />
+    <Report Include="BalancePerdidasPeriodo.rdl" />
+    <Report Include="BasculaDetalle.rdl" />
+    <Report Include="BasculaDetalleProducto.rdl" />
+    <Report Include="BasculaDia.rdl" />
+    <Report Include="BasculaFecha.rdl" />
+    <Report Include="BasculaProcedencia.rdl" />
+    <Report Include="BasculaProducto.rdl" />
+    <Report Include="BasculaProveedor.rdl" />
+    <Report Include="BasculaVehiculos.rdl" />
+    <Report Include="Calidaddefrutaxtiquete.rdl" />
+    <Report Include="Ccosto.rdl" />
+    <Report Include="ChequeBancolombia.rdl" />
+    <Report Include="CiclosCorte.rdl" />
+    <Report Include="CiclosLabor.rdl" />
+    <Report Include="clasificacionPredioTipoFruta.rdl" />
+    <Report Include="Conceptos.rdl" />
+    <Report Include="ConceptosFaltantesCont.rdl" />
+    <Report Include="ConsolidadoVacaciones.rdl" />
+    <Report Include="ConsultaPorteria.rdl" />
+    <Report Include="Contabilizacion.rdl" />
+    <Report Include="ContabilizacionNomina x Periodo.rdl" />
+    <Report Include="ContabilizacionNominaPeriodoTercero.rdl" />
+    <Report Include="ContabilizaciónNomina x Periodo.rdl" />
+    <Report Include="ContabilizaciónNomina x Periodo1.rdl" />
+    <Report Include="Contratos.rdl" />
+    <Report Include="ContratosDestajos.rdl" />
+    <Report Include="ContratoTercero.rdl" />
+    <Report Include="ControlAnalisisVolumetrico.rdl" />
+    <Report Include="DescuentoEntidadSS.rdl" />
+    <Report Include="DescuentoEntidadSSPeriodo.rdl" />
+    <Report Include="DescuentosLiquidacionNomina.rdl" />
+    <Report Include="DespachosRango.rdl" />
+    <Report Include="DesprendibleNomina.rdl" />
+    <Report Include="DesprendibleNominaGeneral.rdl" />
+    <Report Include="DesprendibleNominaPago.rdl" />
+    <Report Include="DesprendibleNominaSemanal.rdl" />
+    <Report Include="DesprendibleNominaTotales.rdl" />
+    <Report Include="DesprendibleTrabajador.rdl" />
+    <Report Include="DetalleConceptosPeriodo.rdl" />
+    <Report Include="Diagnosticos.rdl" />
+    <Report Include="DiferenciaLoteCorte.rdl" />
+    <Report Include="Entradas.rdl" />
+    <Report Include="EstadisticaItem.rdl" />
+    <Report Include="EstadoRemision.rdl" />
+    <Report Include="FincalLoteCanal.rdl" />
+    <Report Include="Fincas.rdl" />
+    <Report Include="FormatoIR.rdl" />
+    <Report Include="FrutaRangoResumen.rdl" />
+    <Report Include="FrutaXfincaXtipoProveedorXmes.rdl" />
+    <Report Include="FuncionarioProgramado.rdl" />
+    <Report Include="Funcionarios.rdl" />
+    <Report Include="FxFincaXtProv.rdl" />
+    <Report Include="GestionRotacion.rdl" />
+    <Report Include="GrupoCaracteristica.rdl" />
+    <Report Include="Hoja de vida x finca.rdl" />
+    <Report Include="HojaVida.rdl" />
+    <Report Include="HojaVidaEquipo.rdl" />
+    <Report Include="HVLotesNovedad.rdl" />
+    <Report Include="IBCSeguridadSocialPeriodo.rdl" />
+    <Report Include="IBCTrabajador.rdl" />
+    <Report Include="IndicadorAgronomico.rdl" />
+    <Report Include="IndicadorAgronomicoAño.rdl" />
+    <Report Include="InfoLiqTiquetes.rdl" />
+    <Report Include="InformeContabilizacionNomina.rdl" />
+    <Report Include="InformeGeneralDestajo.rdl" />
+    <Report Include="InformeGeneralLabores.rdl" />
+    <Report Include="InformeLiquidacionPrimas.rdl" />
+    <Report Include="InformeSeguridadSocialNomina.rdl" />
+    <Report Include="InformexConceptos.rdl" />
+    <Report Include="IngresoAnual.rdl" />
+    <Report Include="IngresoComparativoAnual.rdl" />
+    <Report Include="IngresoReteDetalle.rdl" />
+    <Report Include="Items.rdl" />
+    <Report Include="Jerarquias.rdl" />
+    <Report Include="Labores.rdl" />
+    <Report Include="LaboresDetalles.rdl" />
+    <Report Include="LaboresFechaCentroCosto.rdl" />
+    <Report Include="LaboresFechaLote.rdl" />
+    <Report Include="LaboresFechaLoteFertilizacion.rdl" />
+    <Report Include="LaboresFechaLoteMes.rdl" />
+    <Report Include="LaboresFechaTercero.rdl" />
+    <Report Include="LaboresFertilizacionDetalle.rdl" />
+    <Report Include="LaboresLoteFecha.rdl" />
+    <Report Include="Laboresnopagadasfecha.rdl" />
+    <Report Include="LiquidacionCesantias.rdl" />
+    <Report Include="LiquidacionContratista.rdl" />
+    <Report Include="LiquidacionContratistaLote.rdl" />
+    <Report Include="liquidacionContrato.rdl" />
+    <Report Include="liquidacionContratoInforme.rdl" />
+    <Report Include="liquidacionFrutaDefinitiva.rdl" />
+    <Report Include="LiquidacionHoras.rdl" />
+    <Report Include="LiquidacionHorasOtrosSistemas.rdl" />
+    <Report Include="LiquidacionHorasTotales.rdl" />
+    <Report Include="LiquidacionMaquilaNegocio.rdl" />
+    <Report Include="liquidacionNomina.rdl" />
+    <Report Include="liquidacionNominaCambio.rdl" />
+    <Report Include="LiquidacionNominaInforme.rdl" />
+    <Report Include="liquidacionNominaSemanal.rdl" />
+    <Report Include="liquidacionNominaTrabajador.rdl" />
+    <Report Include="ListaPrecioLote.rdl" />
+    <Report Include="LotesFinca.rdl" />
+    <Report Include="LotesFincaSeccion.rdl" />
+    <Report Include="LotesFincaSeccionSiembra.rdl" />
+    <Report Include="LotesFincaSeccionVariedad.rdl" />
+    <Report Include="LotesLineaPalma.rdl" />
+    <Report Include="MovimeintoItemsPeriodo.rdl" />
+    <Report Include="MovimientoItemsPeriodo.rdl" />
+    <Report Include="MovimientosSostenibilidad.rdl" />
+    <Report Include="NovedadDetalle.rdl" />
+    <Report Include="NovedadesPeriodicas.rdl" />
+    <Report Include="NovedadesTrabajadorFecha.rdl" />
+    <Report Include="Ordenes.rdl" />
+    <Report Include="OrdenesCompra.rdl" />
+    <Report Include="OrdenesFecha.rdl" />
+    <Report Include="PagoNominaPeriodo.rdl" />
+    <Report Include="PagoNominaPeriodoDetallado.rdl" />
+    <Report Include="ParametrizacionContabilizacion.rdl" />
+    <Report Include="PersonalEnPlanta.rdl" />
+    <Report Include="PesoPromedioLote.rdl" />
+    <Report Include="PlanFertilizacionSaldo.rdl" />
+    <Report Include="PlanFertilizacionSaldoTransaccion.rdl" />
+    <Report Include="PpagoXmes.rdl" />
+    <Report Include="Precontabilizacion.rdl" />
+    <Report Include="Preliquidacion.rdl" />
+    <Report Include="PreLiquidacionCesantias.rdl" />
+    <Report Include="PreliquidacionFruta.rdl" />
+    <Report Include="PreLiquidacionPrimas.rdl" />
+    <Report Include="PreLiquidacionPrimasConcepto.rdl" />
+    <Report Include="PreliquidacionResumen.rdl" />
+    <Report Include="PreliquidacionResumenDescuentos.rdl" />
+    <Report Include="PreliquidacionSemanal.rdl" />
+    <Report Include="PreliquidacionSupera.rdl" />
+    <Report Include="PreliquidationCompensatory.rdl" />
+    <Report Include="PreliquidationCompensatoryDetails.rdl" />
+    <Report Include="Prestamos.rdl" />
+    <Report Include="PrestamoSaldos.rdl" />
+    <Report Include="PrestamoSaldosConcepto.rdl" />
+    <Report Include="Procedencias.rdl" />
+    <Report Include="ProduccionAnual.rdl" />
+    <Report Include="ProduccionAnualGerencia.rdl" />
+    <Report Include="ProduccionCorte.rdl" />
+    <Report Include="ProduccionDiario.rdl" />
+    <Report Include="ProduccionFrutaLote.rdl" />
+    <Report Include="ProduccionFrutaLoteAnual.rdl" />
+    <Report Include="ProduccionFurtaLote.rdl" />
+    <Report Include="ProduccionMaquila.rdl" />
+    <Report Include="ProduccionMaquilaTabla.rdl" />
+    <Report Include="ProduccionMensual.rdl" />
+    <Report Include="ProgramacionesFecha.rdl" />
+    <Report Include="ProvisionesPeriodo.rdl" />
+    <Report Include="ProvisionesPeriodoConcepto.rdl" />
+    <Report Include="RegistroNovedades.rdl" />
+    <Report Include="RelacionDescuentosTercero.rdl" />
+    <Report Include="RelacionEquipos.rdl" />
+    <Report Include="RelacionNovedadesPeriodo.rdl" />
+    <Report Include="RemisionMp.rdl" />
+    <Report Include="RendimientoTrabajador.rdl" />
+    <Report Include="RendimientoTrabajadorCosecha.rdl" />
+    <Report Include="ReporteTransacciones.rdl" />
+    <Report Include="RequerimientosPendientes.rdl" />
+    <Report Include="ResumeLaboresxfecha.rdl" />
+    <Report Include="ResumeLaboresxfechaPagada.rdl" />
+    <Report Include="Resumen de Labores x fecha.rdl" />
+    <Report Include="ResumenContratista.rdl" />
+    <Report Include="ResumenDescuentos.rdl" />
+    <Report Include="ResumenDescuentosBananera.rdl" />
+    <Report Include="ResumenGrupoConceptoxAño.rdl" />
+    <Report Include="ResumenLaboresFecha.rdl" />
+    <Report Include="ResumenLiquidacion.rdl" />
+    <Report Include="ResumenLiquidacionMes.rdl" />
+    <Report Include="ResumenPagos.rdl" />
+    <Report Include="ResumenPagos2.rdl" />
+    <Report Include="ResumenPrecontabilizacion.rdl" />
+    <Report Include="ResumenPrenomina.rdl" />
+    <Report Include="ReviLabores.rdl" />
+    <Report Include="ReviLaboresFecha.rdl" />
+    <Report Include="RevisaFrutaCuadrilla.rdl" />
+    <Report Include="RevisionLabores.rdl" />
+    <Report Include="RevisionLaboresFinca.rdl" />
+    <Report Include="RevisionLaboresLote.rdl" />
+    <Report Include="SaldoItemsPeriodo.rdl" />
+    <Report Include="Salidasalmacen.rdl" />
+    <Report Include="SanidadDetallado.rdl" />
+    <Report Include="SanidadResumen.rdl" />
+    <Report Include="SeguridadSocialEntidades.rdl" />
+    <Report Include="SeguridadSocialPeriodo.rdl" />
+    <Report Include="Solicitudes.rdl" />
+    <Report Include="SolicitudesFecha.rdl" />
+    <Report Include="SosteibilidadMensual.rdl" />
+    <Report Include="SostenibilidadMensual.rdl" />
+    <Report Include="SostenibilidadMensualExtrarsa.rdl" />
+    <Report Include="Terceros.rdl" />
+    <Report Include="TiquetesAgronomico.rdl" />
+    <Report Include="TiquetesFrutaFecha.rdl" />
+    <Report Include="TiquetesFrutaFechaPendiente.rdl" />
+    <Report Include="TrabajadoresxCcosto.rdl" />
+    <Report Include="TransaccionesLaboratorioporfecha.rdl" />
+    <Report Include="TransaccionesxFecha.rdl" />
+    <Report Include="TrazabilidadAlmacenSiesa.rdl" />
+    <Report Include="TrazabilidadAlmacenv2.rdl" />
+    <Report Include="TrazabilidadDetallada.rdl" />
+    <Report Include="TrazabilidadResumen.rdl" />
+    <Report Include="VacacionesxEmpleado.rdl" />
+    <Report Include="VacacionesxPeriodo.rdl" />
+    <Report Include="VehiculosPlanta.rdl" />
+    <Report Include="VencerContratos.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
+</Project>

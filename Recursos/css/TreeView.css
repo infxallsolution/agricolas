@@ -1,0 +1,12 @@
+
+
+		.treeview  td a {
+			color:black;
+			 margin: 0;
+            xmin-width: 0;      
+            position: relative;
+            border-radius: 3px;
+            padding-left: 2px !important;
+			text-align: center;
+			
+		}

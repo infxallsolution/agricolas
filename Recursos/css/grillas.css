@@ -1,0 +1,22 @@
+﻿.grillas thead {
+    background: #2E4E9D;
+    color: white;
+}
+
+td.action-item {
+    background: none;
+    background-color: white;
+    color: white;
+    border: 1px dotted #ddd !important;
+}
+
+th.action-item {
+    background: none;
+    background-color: white;
+    color: white;
+    border: none !important;
+}
+
+table.table-bordered {
+    border: none;
+}

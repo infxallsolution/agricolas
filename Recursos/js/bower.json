@@ -1,0 +1,19 @@
+{
+  "name": "dev.cdn.infos.com",
+  "authors": [
+    "Jeferson Rodriguez <jjrodriguez.aceites@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "*",
+    "!dist/*"
+  ],
+  "dependencies": {
+    "jquery": "1.12.4",
+    "cleave.js": "^0.7.21"
+  }
+}

@@ -1,0 +1,899 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{501DDD1C-3044-458B-A130-BA92CAC9B1E8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Contabilidad</RootNamespace>
+    <AssemblyName>Contabilidad</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Security.Cryptography.Algorithms" />
+    <Reference Include="System.Security.Cryptography.Encoding" />
+    <Reference Include="System.Security.Cryptography.Primitives" />
+    <Reference Include="System.Security.Cryptography.X509Certificates" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="WebForms\Formas\Ppresupuesto\PlanPresupuestal.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\Presupuesto.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\PresupuestoCcosto.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\TransaccionPresupuesto.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\ClaseParametro.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\Contabilizacion.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\GenerarPlano.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\GenerarPlanoContable.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\ImprimeInforme.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\Liquidacion.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\ParametrosGenerales.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\PlanoContabilizacion.aspx" />
+    <Content Include="WebForms\Formas\Contabilizacion\Preliquidar.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\BuscarCuentas.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\CajaCliente.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\CajaClienteDoble.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\CajaOtros.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\Cajas.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\ClaseCliente.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\Clientes.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\CondicionPago.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\DetalleFactura.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\Facturas.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\GrupoCliente.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\ListaPrecios.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\MediosPago.aspx" />
+    <Content Include="WebForms\Formas\CuentasxCobrar\Notas.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\Bancos.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\BuscarCuentas.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\BuscarTerceros.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\ClaseProveedor.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\CuentasBanco.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\Egresos.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\EgresosDirectos.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\FormaPago.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\Formatos.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\GrupoProveedores.aspx" />
+    <Content Include="WebForms\Formas\CuentasxPagar\Proveedor.aspx" />
+    <Content Include="WebForms\Formas\MenuInfos.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Auxiliares.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\CentroCosto.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\ClaseCliente.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\ClaseImpuestoRetencion.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\ClaseProveedor.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Clientes.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\ConceptoIR.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Conceptos.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\ConfigIR.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Destinos.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\EstructuraCCosto.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\GrupoCC.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\GrupoIR.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\LoteCcosto.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Nivel.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Perfiles.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Periodos.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Proveedor.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Puc.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\Terceros.aspx" />
+    <Content Include="WebForms\Formas\Padministracion\UsuarioPerfil.aspx" />
+    <Content Include="WebForms\Formas\Pinformes\ImprimeInforme.aspx" />
+    <Content Include="WebForms\Formas\Pinformes\Visualizacion.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\CcostoPresupuesto.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\Items.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\Parametrizacion.aspx" />
+    <Content Include="WebForms\Formas\Ppresupuesto\ParametrosPresupuesto.aspx" />
+    <Content Include="WebForms\Inicio.aspx" />
+    <Content Include="libman.json" />
+    <Content Include="WebForms\js\ajax.js" />
+    <Content Include="WebForms\js\CalendarioMin.js" />
+    <Content Include="WebForms\js\CalendarioUiMin.js" />
+    <Content Include="WebForms\js\chosen.jquery.js" />
+    <Content Include="WebForms\js\funciones.js" />
+    <Content Include="WebForms\js\jquery-1.3.min.js" />
+    <Content Include="WebForms\js\jquery-1.4.4.min.js" />
+    <Content Include="WebForms\js\jquery-1.9.1.js" />
+    <Content Include="WebForms\js\jquery.easyui.min.js" />
+    <Content Include="WebForms\js\jquery.js" />
+    <Content Include="WebForms\js\jquery.min.js" />
+    <Content Include="WebForms\js\jquery.toolbar.js" />
+    <Content Include="WebForms\js\jquery.toolbar.min.js" />
+    <Content Include="WebForms\js\locale\ui-multiselect-es.js" />
+    <Content Include="WebForms\js\locale\ui-multiselect-fr.js" />
+    <Content Include="WebForms\js\locale\ui-multiselect-hu.js" />
+    <Content Include="WebForms\js\locale\ui-multiselect-it.js" />
+    <Content Include="WebForms\js\locale\ui-multiselect-ja.js" />
+    <Content Include="WebForms\js\plugins\scrollTo\jquery.scrollTo-min.js" />
+    <Content Include="WebForms\js\plugins\scrollTo\README.txt" />
+    <Content Include="WebForms\js\prettify.js" />
+    <Content Include="WebForms\js\principal.js" />
+    <Content Include="WebForms\js\src\builder.js" />
+    <Content Include="WebForms\js\src\controls.js" />
+    <Content Include="WebForms\js\src\dragdrop.js" />
+    <Content Include="WebForms\js\src\effects.js" />
+    <Content Include="WebForms\js\src\scriptaculous.js" />
+    <Content Include="WebForms\js\src\slider.js" />
+    <Content Include="WebForms\js\src\sound.js" />
+    <Content Include="WebForms\js\src\unittest.js" />
+    <Content Include="WebForms\js\tab-view.js" />
+    <Content Include="WebForms\js\ui.multiselect.js" />
+    <Content Include="WebForms\js\validacion\fabtabulous.js" />
+    <Content Include="WebForms\js\validacion\validation.js" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\seguridadInfos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="settings.prod.config" />
+    <None Include="Web References\seguridadInfos\security.disco" />
+    <Content Include="Web.config" />
+    <Content Include="WebForms\js\src\javascripttest.rb" />
+    <Content Include="WebForms\Formas\Base.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\seguridadInfos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\App_Code\Administracion\CcentroCosto.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CConceptoIR.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CConfigClaseIR.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cdestinos.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CestruturaCC.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CgrupoCC.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CgrupoIR.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CImpRet.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CloteCcostoSiigo.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Coperadores.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cperfiles.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cperiodos.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cpermisos.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cproveedor.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cpuc.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\cPucSiesa.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cpuc_.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\Cterceros.cs" />
+    <Compile Include="WebForms\App_Code\Administracion\CtipoTransaccion.cs" />
+    <Compile Include="WebForms\App_Code\Contabilizacion\cClaseParametro.cs" />
+    <Compile Include="WebForms\App_Code\Contabilizacion\Ccontabilizacion.cs" />
+    <Compile Include="WebForms\App_Code\Contabilizacion\CliquidacionFruta.cs" />
+    <Compile Include="WebForms\App_Code\Contabilizacion\cParametrosGenerales.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CCajaCliente.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CcajaOtros.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\Ccajas.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CclaseCliente.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\Ccliente.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CcondicionPago.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CcxcFactura.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\Cfacturas.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CfacturasDetalle.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CgrupoCliente.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\Cimpuestos.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\Citems.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CListaPrecios.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxCobrar\CmediosPago.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\Cbanco.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\CbancoPlano.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\CclaseProveedor.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\CcuentasBanco.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\CformaPago.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\CgrupoProveedor.cs" />
+    <Compile Include="WebForms\App_Code\CuentasxPagar\CplanoBanco.cs" />
+    <Compile Include="WebForms\App_Code\General\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\App_Code\General\CcontrolesUsuario.cs" />
+    <Compile Include="WebForms\App_Code\General\Centidades.cs" />
+    <Compile Include="WebForms\App_Code\General\CerroresGeneral.cs" />
+    <Compile Include="WebForms\App_Code\General\Cgeneral.cs" />
+    <Compile Include="WebForms\App_Code\General\CIP.cs" />
+    <Compile Include="WebForms\App_Code\General\cMenu.cs" />
+    <Compile Include="WebForms\App_Code\General\CuentaClass.cs" />
+    <Compile Include="WebForms\App_Code\General\Cusuario.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\cResultado.cs" />
+    <Compile Include="WebForms\Formas\Base.Master.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Base.Master.designer.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\PlanPresupuestal.aspx.cs">
+      <DependentUpon>PlanPresupuestal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\PlanPresupuestal.aspx.designer.cs">
+      <DependentUpon>PlanPresupuestal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\Presupuesto.aspx.cs">
+      <DependentUpon>Presupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\Presupuesto.aspx.designer.cs">
+      <DependentUpon>Presupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\PresupuestoCcosto.aspx.cs">
+      <DependentUpon>PresupuestoCcosto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\PresupuestoCcosto.aspx.designer.cs">
+      <DependentUpon>PresupuestoCcosto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\TransaccionPresupuesto.aspx.cs">
+      <DependentUpon>TransaccionPresupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\TransaccionPresupuesto.aspx.designer.cs">
+      <DependentUpon>TransaccionPresupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\App_Code\Presupuesto\Ccaracteristica.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\CcostoPresupuesto.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\cParametrosPresupuesto.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\CplanPresupuestal.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\Cpresupuesto.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\Ctransaccion.cs" />
+    <Compile Include="WebForms\App_Code\Presupuesto\Ctransacciones.cs" />
+    <Compile Include="WebForms\Formas\Contabilizacion\ClaseParametro.aspx.cs">
+      <DependentUpon>ClaseParametro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\ClaseParametro.aspx.designer.cs">
+      <DependentUpon>ClaseParametro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\Contabilizacion.aspx.cs">
+      <DependentUpon>Contabilizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\Contabilizacion.aspx.designer.cs">
+      <DependentUpon>Contabilizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\GenerarPlano.aspx.cs">
+      <DependentUpon>GenerarPlano.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\GenerarPlano.aspx.designer.cs">
+      <DependentUpon>GenerarPlano.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\GenerarPlanoContable.aspx.cs">
+      <DependentUpon>GenerarPlanoContable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\GenerarPlanoContable.aspx.designer.cs">
+      <DependentUpon>GenerarPlanoContable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\ImprimeInforme.aspx.cs">
+      <DependentUpon>ImprimeInforme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\ImprimeInforme.aspx.designer.cs">
+      <DependentUpon>ImprimeInforme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\Liquidacion.aspx.cs">
+      <DependentUpon>Liquidacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\Liquidacion.aspx.designer.cs">
+      <DependentUpon>Liquidacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\ParametrosGenerales.aspx.cs">
+      <DependentUpon>ParametrosGenerales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\ParametrosGenerales.aspx.designer.cs">
+      <DependentUpon>ParametrosGenerales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\PlanoContabilizacion.aspx.cs">
+      <DependentUpon>PlanoContabilizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\PlanoContabilizacion.aspx.designer.cs">
+      <DependentUpon>PlanoContabilizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\Preliquidar.aspx.cs">
+      <DependentUpon>Preliquidar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Contabilizacion\Preliquidar.aspx.designer.cs">
+      <DependentUpon>Preliquidar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\BuscarCuentas.aspx.cs">
+      <DependentUpon>BuscarCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\BuscarCuentas.aspx.designer.cs">
+      <DependentUpon>BuscarCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CajaCliente.aspx.cs">
+      <DependentUpon>CajaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CajaCliente.aspx.designer.cs">
+      <DependentUpon>CajaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CajaClienteDoble.aspx.cs">
+      <DependentUpon>CajaClienteDoble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CajaClienteDoble.aspx.designer.cs">
+      <DependentUpon>CajaClienteDoble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CajaOtros.aspx.cs">
+      <DependentUpon>CajaOtros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CajaOtros.aspx.designer.cs">
+      <DependentUpon>CajaOtros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Cajas.aspx.cs">
+      <DependentUpon>Cajas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Cajas.aspx.designer.cs">
+      <DependentUpon>Cajas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\ClaseCliente.aspx.cs">
+      <DependentUpon>ClaseCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\ClaseCliente.aspx.designer.cs">
+      <DependentUpon>ClaseCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CondicionPago.aspx.cs">
+      <DependentUpon>CondicionPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\CondicionPago.aspx.designer.cs">
+      <DependentUpon>CondicionPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\DetalleFactura.aspx.cs">
+      <DependentUpon>DetalleFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\DetalleFactura.aspx.designer.cs">
+      <DependentUpon>DetalleFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Facturas.aspx.cs">
+      <DependentUpon>Facturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Facturas.aspx.designer.cs">
+      <DependentUpon>Facturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\GrupoCliente.aspx.cs">
+      <DependentUpon>GrupoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\GrupoCliente.aspx.designer.cs">
+      <DependentUpon>GrupoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\ListaPrecios.aspx.cs">
+      <DependentUpon>ListaPrecios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\ListaPrecios.aspx.designer.cs">
+      <DependentUpon>ListaPrecios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\MediosPago.aspx.cs">
+      <DependentUpon>MediosPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\MediosPago.aspx.designer.cs">
+      <DependentUpon>MediosPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Notas.aspx.cs">
+      <DependentUpon>Notas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxCobrar\Notas.aspx.designer.cs">
+      <DependentUpon>Notas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Bancos.aspx.cs">
+      <DependentUpon>Bancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Bancos.aspx.designer.cs">
+      <DependentUpon>Bancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\BuscarCuentas.aspx.cs">
+      <DependentUpon>BuscarCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\BuscarCuentas.aspx.designer.cs">
+      <DependentUpon>BuscarCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\BuscarTerceros.aspx.cs">
+      <DependentUpon>BuscarTerceros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\BuscarTerceros.aspx.designer.cs">
+      <DependentUpon>BuscarTerceros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\ClaseProveedor.aspx.cs">
+      <DependentUpon>ClaseProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\ClaseProveedor.aspx.designer.cs">
+      <DependentUpon>ClaseProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\CuentasBanco.aspx.cs">
+      <DependentUpon>CuentasBanco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\CuentasBanco.aspx.designer.cs">
+      <DependentUpon>CuentasBanco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Egresos.aspx.cs">
+      <DependentUpon>Egresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Egresos.aspx.designer.cs">
+      <DependentUpon>Egresos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\EgresosDirectos.aspx.cs">
+      <DependentUpon>EgresosDirectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\EgresosDirectos.aspx.designer.cs">
+      <DependentUpon>EgresosDirectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\FormaPago.aspx.cs">
+      <DependentUpon>FormaPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\FormaPago.aspx.designer.cs">
+      <DependentUpon>FormaPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Formatos.aspx.cs">
+      <DependentUpon>Formatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Formatos.aspx.designer.cs">
+      <DependentUpon>Formatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\GrupoProveedores.aspx.cs">
+      <DependentUpon>GrupoProveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\GrupoProveedores.aspx.designer.cs">
+      <DependentUpon>GrupoProveedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Proveedor.aspx.cs">
+      <DependentUpon>Proveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\CuentasxPagar\Proveedor.aspx.designer.cs">
+      <DependentUpon>Proveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\MenuInfos.aspx.cs">
+      <DependentUpon>MenuInfos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\MenuInfos.aspx.designer.cs">
+      <DependentUpon>MenuInfos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Auxiliares.aspx.cs">
+      <DependentUpon>Auxiliares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Auxiliares.aspx.designer.cs">
+      <DependentUpon>Auxiliares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\CentroCosto.aspx.cs">
+      <DependentUpon>CentroCosto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\CentroCosto.aspx.designer.cs">
+      <DependentUpon>CentroCosto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ClaseCliente.aspx.cs">
+      <DependentUpon>ClaseCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ClaseCliente.aspx.designer.cs">
+      <DependentUpon>ClaseCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ClaseImpuestoRetencion.aspx.cs">
+      <DependentUpon>ClaseImpuestoRetencion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ClaseImpuestoRetencion.aspx.designer.cs">
+      <DependentUpon>ClaseImpuestoRetencion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ClaseProveedor.aspx.cs">
+      <DependentUpon>ClaseProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ClaseProveedor.aspx.designer.cs">
+      <DependentUpon>ClaseProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ConceptoIR.aspx.cs">
+      <DependentUpon>ConceptoIR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ConceptoIR.aspx.designer.cs">
+      <DependentUpon>ConceptoIR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Conceptos.aspx.cs">
+      <DependentUpon>Conceptos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Conceptos.aspx.designer.cs">
+      <DependentUpon>Conceptos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ConfigIR.aspx.cs">
+      <DependentUpon>ConfigIR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\ConfigIR.aspx.designer.cs">
+      <DependentUpon>ConfigIR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Destinos.aspx.cs">
+      <DependentUpon>Destinos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Destinos.aspx.designer.cs">
+      <DependentUpon>Destinos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\EstructuraCCosto.aspx.cs">
+      <DependentUpon>EstructuraCCosto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\EstructuraCCosto.aspx.designer.cs">
+      <DependentUpon>EstructuraCCosto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\GrupoCC.aspx.cs">
+      <DependentUpon>GrupoCC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\GrupoCC.aspx.designer.cs">
+      <DependentUpon>GrupoCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\GrupoIR.aspx.cs">
+      <DependentUpon>GrupoIR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\GrupoIR.aspx.designer.cs">
+      <DependentUpon>GrupoIR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\LoteCcosto.aspx.cs">
+      <DependentUpon>LoteCcosto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\LoteCcosto.aspx.designer.cs">
+      <DependentUpon>LoteCcosto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Nivel.aspx.cs">
+      <DependentUpon>Nivel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Nivel.aspx.designer.cs">
+      <DependentUpon>Nivel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Perfiles.aspx.cs">
+      <DependentUpon>Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Perfiles.aspx.designer.cs">
+      <DependentUpon>Perfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Periodos.aspx.cs">
+      <DependentUpon>Periodos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Periodos.aspx.designer.cs">
+      <DependentUpon>Periodos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Proveedor.aspx.cs">
+      <DependentUpon>Proveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Proveedor.aspx.designer.cs">
+      <DependentUpon>Proveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Puc.aspx.cs">
+      <DependentUpon>Puc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Puc.aspx.designer.cs">
+      <DependentUpon>Puc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Terceros.aspx.cs">
+      <DependentUpon>Terceros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\Terceros.aspx.designer.cs">
+      <DependentUpon>Terceros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\UsuarioPerfil.aspx.cs">
+      <DependentUpon>UsuarioPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Padministracion\UsuarioPerfil.aspx.designer.cs">
+      <DependentUpon>UsuarioPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Pinformes\ImprimeInforme.aspx.cs">
+      <DependentUpon>ImprimeInforme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Pinformes\ImprimeInforme.aspx.designer.cs">
+      <DependentUpon>ImprimeInforme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Pinformes\Visualizacion.aspx.cs">
+      <DependentUpon>Visualizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Pinformes\Visualizacion.aspx.designer.cs">
+      <DependentUpon>Visualizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\CcostoPresupuesto.aspx.cs">
+      <DependentUpon>CcostoPresupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\CcostoPresupuesto.aspx.designer.cs">
+      <DependentUpon>CcostoPresupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\Items.aspx.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\Items.aspx.designer.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\Parametrizacion.aspx.cs">
+      <DependentUpon>Parametrizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\Parametrizacion.aspx.designer.cs">
+      <DependentUpon>Parametrizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\ParametrosPresupuesto.aspx.cs">
+      <DependentUpon>ParametrosPresupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Formas\Ppresupuesto\ParametrosPresupuesto.aspx.designer.cs">
+      <DependentUpon>ParametrosPresupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web References\seguridadInfos\security.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="WebForms\js\lib\" />
+    <Folder Include="WebForms\js\plugins\localisation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://app.infos.com/Security/security.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\seguridadInfos\</RelPath>
+      <UpdateFromURL>http://app.infos.com/Security/security.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Contabilidad_seguridadInfos_Security</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Src\Services\Service.DataAcces\Service.DataAcces.csproj">
+      <Project>{eb245c54-499d-4236-b63a-118ba7a64663}</Project>
+      <Name>Service.DataAcces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50900</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50900/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.17.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

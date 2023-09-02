@@ -1,0 +1,14 @@
+{
+  "name": "jquery-ui-muliselect",
+  "version": "0.3.1",
+  "description": "jQuery UI Multiselect Widget http://www.quasipartikel.at/multiselect",
+  "main": "js/ui.multiselect.js",
+  "repository": {
+    "url": "https://github.com/michael/multiselect",
+    "type": "git"
+  },
+  "author": "Michael Aufreiter",
+  "license": "MIT",
+  "homepage": "https://github.com/michael/multiselect",
+  "bugs": "https://github.com/michael/multiselect/issues"
+}

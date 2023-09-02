@@ -1,0 +1,93 @@
+.icon-blank {
+    background: url('http://infos.aceitesa.com/Imagen/TabsIcon/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/edit_add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/pencil.png') no-repeat center center;
+}
+.icon-clear{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/clear.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/edit_remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/tip.png') no-repeat center center;
+}
+.icon-filter{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/filter.png') no-repeat center center;
+}
+.icon-man{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/man.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/lock.png') no-repeat center center;
+}
+
+
+.icon-mini-add{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/mini_refresh.png') no-repeat center center;
+}
+
+.icon-large-picture{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/large_picture.png') no-repeat center center;
+}
+.icon-large-clipart{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/large_clipart.png') no-repeat center center;
+}
+.icon-large-shapes{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('http://infos.aceitesa.com/Imagen/TabsIcon/large_chart.png') no-repeat center center;
+}
