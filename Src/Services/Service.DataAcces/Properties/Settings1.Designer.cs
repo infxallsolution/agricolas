@@ -52,7 +52,7 @@ namespace Service.DataAcces.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost\\sql;Database=infos;User Id=sa;Password=Sa123456;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=InfosAgricola;Trusted_Connection=True;")]
         public string CadenaConexion {
             get {
                 return ((string)(this["CadenaConexion"]));

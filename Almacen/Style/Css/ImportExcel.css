@@ -1,0 +1,27 @@
+﻿/* Estilo para el encabezado h1 */
+h1.text-center {
+    margin-top: 150px; /* Aumenta este valor para moverlo más hacia abajo */
+}
+/* Resto de tu CSS existente */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+}
+
+.import-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: none;
+    margin: -200px auto 20px;
+}
+
+.custom-file-upload label {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0;
+}

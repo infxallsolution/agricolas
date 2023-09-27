@@ -40,6 +40,8 @@ namespace Almacen.WebForms.App_Code.General
 
         }
 
+
+
         public string retornaFormatoTipoTransaccion(string tipoTransaccion, int empresa)
         {
             string[] iParametros = new string[] { "@tipoTransaccion", "@empresa" };

@@ -1,0 +1,49 @@
+﻿
+
+.form-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100;
+    max-width: none;
+}
+
+    .form-container h4 {
+        margin-top: 0;
+    }
+
+    .form-container label {
+        font-weight: bold;
+    }
+
+    .form-container .float-end {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+.observacion-tooltip {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.field-error {
+    border: 1px solid red;
+    background-color: #ffe0e0;
+}
+
+.form-group.row.d-flex {
+    align-items: center;
+}
+
+    .form-group.row.d-flex label {
+        min-width: 100px;
+        margin-right: 5px;
+    }

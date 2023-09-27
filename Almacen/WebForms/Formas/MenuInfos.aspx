@@ -188,6 +188,12 @@
                 <ul id="nav">
                     <li class="" style="text-align: left"><a class="" href="#">Administración</a>
                         <ul class="submenu">
+                            <li><a href="#">Salidas</a>
+                                <ul class="subsubmenu">
+                                    <li><a href="#" onclick="addTab('Cuentas','/Vsalidas',true)">Registro de salidas</a></li>
+                                    <li><a href="#" onclick="addTab('Importar cuentas','/ImportSalidas',true)">Importar salidas</a></li>
+                                </ul>
+                            </li>                         
                             <li><a href="#" onclick="addTab('Bodegas','Padministracion/Bodega.aspx',true)">Bodega</a></li>
                             <li><a href="#" onclick="addTab('Destinos','Padministracion/Destinos.aspx',true);">Destinos</a></li>
                             <li><a href="#">Items</a>

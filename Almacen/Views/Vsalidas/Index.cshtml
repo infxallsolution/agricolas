@@ -1,0 +1,63 @@
+﻿@model Almacen.Models.ModelVsalidas
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Lista de salidas</title>
+    <link href="http://app.infos.com/recursosinfos/css/root.css" rel="stylesheet" />
+    <link href="~/Style/Css/StileLabel.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-container mb-0">
+        <form action="/Vsalidas/Index" method="post">
+            <div class="row fg-nspacing">
+                <div class="col-md-3">
+                    <label for="StartDate" class="mb-0">Fecha inicial</label>
+                    @Html.TextBoxFor(model => model.Dates.StartDate, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker", type = "date", id = "StartDate" })
+                </div>
+                <div class="col-md-3">
+                    <label for="FinaltDate" class="mb-0">Fecha final</label>
+                    @Html.TextBoxFor(model => model.Dates.FinaltDate, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker", type = "date", id = "FinaltDate" })
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <input type="submit" value="Filtrar" class="btn btn-primary" /> |
+                    <input type="submit" formaction="/Vsalidas/Export" value="Exportar" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+    <div class="container">
+        <table class="table" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Número de salida</th>
+                    <th class="text-center">Producto</th>
+                    <th>Cantidad</th>
+                    <th>Valor unitario</th>
+                    <th>Valor total</th>
+                    <th>Cuenta contable</th>
+                    <th>Centro de costo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.VSalidas)
+                {
+                    <tr>
+                        <td><span>@item.fecha.ToString("dd/MM/yyyy")</span></td>
+                        <td>@item.numero</td>
+                        <td>@item.cadenaItems</td>
+                        <td>@item.cantidad</td>
+                        <td>@item.valorUnitario</td>
+                        <td>@item.valorTotal</td>
+                        <td>NULL</td>
+                        <td>NULL</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
